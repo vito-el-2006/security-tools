@@ -1,13 +1,20 @@
-# security-tools
+# Posix-WiFi-Scanner
 
-This repository is a space for the collaborative coding of security-related tools. Projects developed here can be used in either red team or blue team operations. 
+These scripts are POSIX compliant and due to that are not designed to be
+ran on Windows devices.
 
-### Absolutely NO MALWARE is allowed in this or any repository on the ISSA-CollinCollege profile.
-- We do not condone the creation or proliferation of malware outside of an authorized and contained research environment. 
-- Students and practitioners are advised to take caution when creating and handling malware and must take precautions to ensure its containment.
-- For these reasons, we will not allow malware to be published on this page.
+There are two scripts, one is the network scanner itself and a script
+deisgned to format the output of it. They are described below;
 
-### Adding Files
-- To add files, first understand contribution requirements outlined in [CONTRIBUTING.md](https://github.com/ISSA-CollinCollege/Getting-Started/blob/c20b7feaeafe7b25ac7eb1904b20eb071993e347/Getting-Started/CONTRIBUTING.md)
-- Fork the entire repo and add your files
-- Create a Pull Request and after code review, your project will be on this repository
+wifi-posix-scanner.sh:
+
+	This script will find nearby WiFi networks using NMCLI (Network
+Manager's CLI utility) and save them inside of a file named ScanResults.
+
+wifi-posix-scan-formatter.sh:
+
+	This script will format the ScanResults output (must be passed
+as an argument) to this script, it uses Python3 to format the output in
+two different ways. The first is a semi-human readable fassion that uses
+a string to signify a BSSID and SSID from each other. The second is JSON
+where the SSID is set as the key and the BSSID is set as the value.
